@@ -8,6 +8,8 @@ public class Main {
             //System.out.println("Hello!");
         } catch (NegativeArraySizeException e) { //catch значит поймай, catch будет исполнятся если try завершиться ошибкой и программа пойдет исполняться дальше
             System.out.println("ERROR");
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }
