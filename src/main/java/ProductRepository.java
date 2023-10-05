@@ -11,7 +11,10 @@ public class ProductRepository {
     }
 
     public void removeById(int id) {
-
+        if (id < 0) {
+           RuntimeException e = new RuntimeException("ID не может быть отрицательным: " + id); //создаем отчет об ошибке обычный класс, id который нам передан
+            throw e; //стартовать процесс умирания программы с отчетом
+        }
         PurchaseItem[] tmp = new PurchaseItem[items.length - 1];
         int copyToIndex = 0;
         for (PurchaseItem item : items) {
